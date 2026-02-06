@@ -1,0 +1,8 @@
+#install dependencies
+pip install fastapi uvicorn insightface opencv-python numpy
+#run the app
+uvicorn main:app --host 0.0.0.0 --port 8001
+
+#build and run the docker container
+docker build --no-cache -t face-service .
+docker run -p 8001:8001 face-service
