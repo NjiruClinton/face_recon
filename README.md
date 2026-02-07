@@ -9,9 +9,9 @@ docker run -p 8001:8001 face-service
 ```
 
 2. The API will be available at:
-- Main endpoint: http://localhost:8000
-- Interactive docs: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
+- Main endpoint: http://localhost:8001
+- Interactive docs: http://localhost:8001/docs
+- ReDoc: http://localhost:8001/redoc
 
 ### API Endpoints
 
