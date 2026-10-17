@@ -9,3 +9,40 @@ GET http://127.0.0.1:8000/hello/User
 Accept: application/json
 
 ###
+
+# Test liveliness detection endpoint - Single frame
+POST http://127.0.0.1:8000/liveliness
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+
+------WebKitFormBoundary
+Content-Disposition: form-data; name="files"; filename="face_image1.jpg"
+Content-Type: image/jpeg
+
+< /path/to/your/face/image1.jpg
+------WebKitFormBoundary--
+
+###
+
+# Test liveliness detection endpoint - Multiple frames
+POST http://127.0.0.1:8000/liveliness
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+
+------WebKitFormBoundary
+Content-Disposition: form-data; name="files"; filename="frame1.jpg"
+Content-Type: image/jpeg
+
+< /path/to/frame1.jpg
+------WebKitFormBoundary
+Content-Disposition: form-data; name="files"; filename="frame2.jpg"
+Content-Type: image/jpeg
+
+< /path/to/frame2.jpg
+------WebKitFormBoundary
+Content-Disposition: form-data; name="files"; filename="frame3.jpg"
+Content-Type: image/jpeg
+
+< /path/to/frame3.jpg
+------WebKitFormBoundary--
+
+###
+
